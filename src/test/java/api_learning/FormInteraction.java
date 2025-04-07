@@ -26,7 +26,7 @@ public class FormInteraction {
             WebElement loginBtnElem = driver.findElement(loginBtnSel);
 
             // Get attribute value
-            System.out.println("Login btn type: " + loginBtnElem.getAttribute("type"));
+            System.out.println("Login btn type: " + loginBtnElem.getDomAttribute("type"));
             System.out.println("Login btn background color: " + loginBtnElem.getCssValue("background-color"));
 
             // Interaction
