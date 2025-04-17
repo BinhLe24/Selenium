@@ -3,6 +3,7 @@ package api_learning;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,6 +28,16 @@ public class DynamicControl implements Urls {
 
             // Checkbox form interaction
             WebElement checkboxFormElem = driver.findElement(checkboxFormSel);
+            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+
+            Boolean isLocal = System.getenv("isLocal")!= null && System.getenv("isLocal").equalsIgnoreCase("true");
+            if (isLocal){
+                javascriptExecutor.executeScript("arguments[0].setAttribute('style','border: 4px solid red')", checkboxFormElem);
+            }
+
+            // DEBUG PURPOSE ONLY
+            Thread.sleep(2000);
+
             WebElement checkboxElem = checkboxFormElem.findElement(By.tagName("input"));
             if (!checkboxElem.isSelected())
                 checkboxElem.click();
@@ -37,7 +48,6 @@ public class DynamicControl implements Urls {
             // Input form interaction
             WebElement inputFormElem = driver.findElement(inputFormSel);
             WebElement inputFieldElem = inputFormElem.findElement(By.tagName("input"));
-            
             WebElement enableButtonElem = inputFormElem.findElement(By.tagName("button"));
 
             if (!inputFieldElem.isEnabled()) {

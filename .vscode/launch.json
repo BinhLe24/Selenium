@@ -1,0 +1,108 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Dropdown",
+            "request": "launch",
+            "mainClass": "api_learning.Dropdown",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "DynamicControl",
+            "request": "launch",
+            "mainClass": "api_learning.DynamicControl",
+            "projectName": "selenium",
+            "env": {
+                "isLocal": "true"
+            }
+        },
+        {
+            "type": "java",
+            "name": "ElementDisplaying",
+            "request": "launch",
+            "mainClass": "api_learning.ElementDisplaying",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "ExplicitWait",
+            "request": "launch",
+            "mainClass": "api_learning.ExplicitWait",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "FormInteraction",
+            "request": "launch",
+            "mainClass": "api_learning.FormInteraction",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "FormInteractionMultipleMatching",
+            "request": "launch",
+            "mainClass": "api_learning.FormInteractionMultipleMatching",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "IFrame",
+            "request": "launch",
+            "mainClass": "api_learning.IFrame",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "JSExecutor",
+            "request": "launch",
+            "mainClass": "api_learning.JSExecutor",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "JsAlerts",
+            "request": "launch",
+            "mainClass": "api_learning.JsAlerts",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "LaunchBrowser",
+            "request": "launch",
+            "mainClass": "api_learning.LaunchBrowser",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "LinkTextInteraction",
+            "request": "launch",
+            "mainClass": "api_learning.LinkTextInteraction",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "MouseHoverAndNarrowDownSearchingScope",
+            "request": "launch",
+            "mainClass": "api_learning.MouseHoverAndNarrowDownSearchingScope",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "PageTitleAndCurrentUrl",
+            "request": "launch",
+            "mainClass": "api_learning.PageTitleAndCurrentUrl",
+            "projectName": "selenium"
+        }
+    ]
+}
