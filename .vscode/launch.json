@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "models.Test",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "AnnotationTest",
+            "request": "launch",
+            "mainClass": "models.components.AnnotationTest",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "ComponentExploring",
+            "request": "launch",
+            "mainClass": "models.components.ComponentExploring",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "LoginTestMod03",
+            "request": "launch",
+            "mainClass": "pom_tests.LoginTestMod03",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "LoginTestMod02",
+            "request": "launch",
+            "mainClass": "pom_tests.LoginTestMod02",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "LoginTestMod01",
+            "request": "launch",
+            "mainClass": "pom_tests.LoginTestMod01",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

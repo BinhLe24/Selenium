@@ -7,8 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 public class WaitForElementEnabled implements ExpectedCondition<Boolean> {
     private By selector;
 
-    public WaitForElementEnabled(By selector) {
-        this.selector = selector;
+    public WaitForElementEnabled(By selector1) {
+        this.selector = selector1;
     }
 
     @Override
