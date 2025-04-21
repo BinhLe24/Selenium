@@ -1,6 +1,12 @@
 package models.components;
 
+import org.openqa.selenium.WebDriver;
+
 public class ExternalLoginPage extends LoginPage {
+
+    public ExternalLoginPage(WebDriver driver){
+        super(driver);
+    }
 
     @Override
     public String username() {

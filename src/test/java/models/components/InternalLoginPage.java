@@ -1,6 +1,12 @@
 package models.components;
 
+import org.openqa.selenium.WebDriver;
+
 public class InternalLoginPage extends LoginPage {
+
+    public InternalLoginPage(WebDriver driver){
+        super(driver);
+    }
 
     @Override
     public String username() {
