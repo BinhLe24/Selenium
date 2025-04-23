@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FeatureProductTest",
+            "request": "launch",
+            "mainClass": "tests.global.footer.FeatureProductTest",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
             "name": "FooterTest",
             "request": "launch",
             "mainClass": "tests.global.footer.FooterTest",

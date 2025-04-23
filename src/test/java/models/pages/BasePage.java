@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import models.components.Component;
 import models.components.global.footer.FooterComponent;
+import models.components.product.ProductGridComponent;
 
 public class BasePage extends Component {
 
@@ -13,6 +14,10 @@ public class BasePage extends Component {
     public BasePage(WebDriver driver) {
         super(driver, driver.findElement(By.tagName("html")));
         this.driver = driver;
+    }
+
+    public ProductGridComponent productGridComponent() {
+        return findComponent(ProductGridComponent.class, driver);
     }
 
     public FooterComponent footerComponent() {
