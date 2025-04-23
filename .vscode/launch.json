@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FeatureProductTest",
+            "request": "launch",
+            "mainClass": "tests.global.footer.FeatureProductTest",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "FooterTest",
+            "request": "launch",
+            "mainClass": "tests.global.footer.FooterTest",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "Test2",
+            "request": "launch",
+            "mainClass": "models.pages.Test2",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
             "name": "Test",
             "request": "launch",
             "mainClass": "models.Test",
