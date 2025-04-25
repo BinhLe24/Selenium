@@ -14,6 +14,7 @@ import models.components.global.footer.FooterColumnComponent;
 import models.components.global.footer.InformationColumnComponent;
 import models.pages.HomePage;
 import support.verification.Verifier;
+import test_flows.global.FooterTestFlow;
 import url.Urls;
 
 public class FooterTest {
@@ -51,6 +52,8 @@ public class FooterTest {
     public void testFooterCategoryPage() {
         try {
             testFooter(driver, Urls.categoryPageUrl);
+            FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+            footerTestFlow.verifyFooterComponent();
         } catch (Exception e) {
             e.printStackTrace();
         }
