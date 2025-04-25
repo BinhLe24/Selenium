@@ -1,6 +1,10 @@
 package tests.global.footer;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import driver.DriverFactory;
 import models.components.global.footer.AccountColumnComponent;
@@ -9,40 +13,71 @@ import models.components.global.footer.FollowUsColumnComponent;
 import models.components.global.footer.FooterColumnComponent;
 import models.components.global.footer.InformationColumnComponent;
 import models.pages.HomePage;
+import support.verification.Verifier;
 import url.Urls;
 
 public class FooterTest {
-    public static void main(String[] args) {
-        WebDriver driver = DriverFactory.getChromDriver();
 
+    @Test
+    public void testDemo1() {
+        String actualResult = "Ti";
+        String expectedResult = "Teo";
+        // Verifier.verifyResult(actualResult, expectedResult);
+
+        // Hard assertion
+        Assert.assertEquals(expectedResult, actualResult, "[ERR] Welcome message is incorrect!");
+        Assert.assertTrue("[ERR] Welcome message is incorrect!", actualResult.equals(expectedResult));
+        Assert.assertFalse("[ERR] Welcome message is incorrect!", !actualResult.equals(expectedResult));
+        Assert.fail();
+        Assert.fail("[ERR] Welcome message is incorrect!");
+    }
+
+    @Test
+    public void testDemo2() {
+        // Soft assertion
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(1, 2);
+        softAssert.assertEquals(true, true);
+        softAssert.assertEquals(2, 3);
+        softAssert.assertAll();
+
+        System.out.println("Hello");
+
+    }
+
+    WebDriver driver = DriverFactory.getChromDriver();
+
+    @Test
+    public void testFooterCategoryPage() {
         try {
-            testFooterHomePage(driver);
-            testFooterCategoryPage(driver);
-            testFooterRegisterPage(driver);
-            testFooterLoginPage(driver);
+            testFooter(driver, Urls.categoryPageUrl);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testFooterRegisterPage() {
+        try {
+            testFooter(driver, Urls.registerPageUrl);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testFooterLoginPage() {
+        try {
+            testFooter(driver, Urls.loginPageUrl);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    @AfterSuite
+    public void afterSuite() {
         driver.quit();
-
-    }
-
-    private static void testFooterHomePage(WebDriver driver) {
-        testFooter(driver, Urls.demoPageUrl);
-    }
-
-    private static void testFooterCategoryPage(WebDriver driver) {
-        testFooter(driver, Urls.categoryPageUrl);
-    }
-
-    private static void testFooterRegisterPage(WebDriver driver) {
-        testFooter(driver, Urls.registerPageUrl);
-    }
-
-    private static void testFooterLoginPage(WebDriver driver) {
-        testFooter(driver, Urls.loginPageUrl);
-
     }
 
     public static void testFooterColumn(FooterColumnComponent footerColumnComponent) {
