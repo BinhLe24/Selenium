@@ -24,6 +24,10 @@ public class Component {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
+    public WebElement getComponent() {
+        return component;
+    }
+
     public WebElement findElement(By by) {
         return this.component.findElement(by);
     }
@@ -38,14 +42,14 @@ public class Component {
 
     public <T extends Component> List<T> findComponents(Class<T> componentClass, WebDriver driver) {
         // Get component selector
-        String cssSelector;
+        By componentSelector;
         try {
-            cssSelector = componentClass.getAnnotation(ComponentCssSelector.class).value();
+            componentSelector = getCompSelector(componentClass);
         } catch (Exception e) {
             throw new IllegalArgumentException("[ERR] The component must have a css selector");
         }
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(cssSelector)));
-        List<WebElement> results = this.component.findElements(By.cssSelector(cssSelector));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(componentSelector));
+        List<WebElement> results = this.component.findElements(componentSelector);
 
         // Define component class contructor params
         Class<?>[] params = new Class[] { WebDriver.class, WebElement.class };
@@ -56,7 +60,7 @@ public class Component {
             throw new IllegalArgumentException(
                     "[ERR] The component must have a constructor with params " + Arrays.toString(params));
         }
-        
+
         // Covert all elements to components
         List<T> components = results.stream().map(webElement -> {
             try {
@@ -67,5 +71,18 @@ public class Component {
             return null;
         }).collect(Collectors.toList());
         return components;
+    }
+
+    private By getCompSelector(Class<? extends Component> componentClass) {
+        if (componentClass.isAnnotationPresent(ComponentCssSelector.class)) {
+            return By.cssSelector(componentClass.getAnnotation(ComponentCssSelector.class).value());
+        }
+        if (componentClass.isAnnotationPresent(ComponentXpathSelector.class)) {
+            return By.xpath(componentClass.getAnnotation(ComponentXpathSelector.class).value());
+        } else {
+            throw new IllegalArgumentException("Component class " + componentClass + "must have annotation "
+                    + ComponentCssSelector.class.getSimpleName() + "or "
+                    + ComponentXpathSelector.class.getSimpleName());
+        }
     }
 }
