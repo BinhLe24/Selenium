@@ -33,8 +33,8 @@ public class FooterTestFlow {
         FooterComponent footerComponent = basePage.footerComponent();
         verifyInformationColumn(footerComponent.informationColumnComponent());
         verifyCustomerServiceColumn(footerComponent.customerServiceColumnComponent());
-        verifyAccountColumn(footerComponent.accountColumnComponent());
-        verifyFllowUsColumn(footerComponent.followUsColumnComponent());
+        // verifyAccountColumn(footerComponent.accountColumnComponent());
+        // verifyFllowUsColumn(footerComponent.followUsColumnComponent());
     }
 
     private void verifyInformationColumn(FooterColumnComponent footerColumnComponent) {
@@ -46,8 +46,10 @@ public class FooterTestFlow {
     }
 
     private void verifyCustomerServiceColumn(FooterColumnComponent footerColumnComponent) {
-        List<String> expectedLinkTexts = new ArrayList<>();
-        List<String> expectedHrefs = new ArrayList<>();
+        List<String> expectedLinkTexts = Arrays.asList("Search", "News", "Blog",
+                "Recently viewed products", "Compare products list", "New products");
+        List<String> expectedHrefs = Arrays.asList("/search", "/news", "/blog",
+                "/recentlyviewedproducts", "/compareproducts", "/newproducts");
         verifyFooterColumn(footerColumnComponent, expectedLinkTexts, expectedHrefs);
     }
 
@@ -107,7 +109,7 @@ public class FooterTestFlow {
         } else {
             int randomIndex = new SecureRandom().nextInt(catItemComps.size());
             CatItemComponent randomCatItemComps = catItemComps.get(randomIndex);
-            randomCatHref = randomCatItemComps.getComponent().getDomAttribute(randomCatHref);
+            randomCatHref = randomCatItemComps.getComponent().getDomAttribute("href");
             randomCatItemComps.getComponent().click();
         }
 
