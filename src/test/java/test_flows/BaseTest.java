@@ -45,32 +45,31 @@ public class BaseTest {
             // 2. Get taken time
             Calendar calendar = new GregorianCalendar();
             int y = calendar.get(Calendar.YEAR);
-            int m = calendar.get(Calendar.MONTH) + 1;
+            int m = calendar.get(Calendar.MONTH);
             int d = calendar.get(Calendar.DATE);
-            int hr = calendar.get(Calendar.HOUR);
+            int hr = calendar.get(Calendar.YEAR);
             int min = calendar.get(Calendar.MINUTE);
             int sec = calendar.get(Calendar.SECOND);
             String fileName = methodName + "-" + y + "-" + m + "-" + d + "-" + hr + "-" + min + "-" + sec + ".png";
+            ;
 
             // 3. Take screenshot
-            File screenShotBase64Data = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File screenShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
             try {
                 // 4. Save
                 String fileLocation = System.getProperty("user.dir") + "/screenShots/" + fileName;
-                FileUtils.copyFile(screenShotBase64Data, new File(fileLocation));
+                FileUtils.copyFile(screenShot, new File(fileLocation));
 
-                // 5. Attach
+                // 5. Attach to report
                 Path content = Paths.get(fileLocation);
                 try (InputStream inputStream = Files.newInputStream(content)) {
-                    Allure.addAttachment(methodName, inputStream);
+                    Allure.addAttachment(fileName, inputStream);
                 }
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            // Attach to allure report
         }
     }
 }

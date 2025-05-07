@@ -1,6 +1,5 @@
 package tests.global.footer;
 
-import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import test_flows.BaseTest;
