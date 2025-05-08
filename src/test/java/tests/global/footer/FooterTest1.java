@@ -1,5 +1,6 @@
 package tests.global.footer;
 
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
 import test_flows.BaseTest;
@@ -17,6 +18,7 @@ public class FooterTest1 extends BaseTest {
     @Test
     public void testFooterRegistorPage() {
         driver.get(url.Urls.registerPageUrl);
+        Assert.fail();
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
         footerTestFlow.verifyProductCatFooterComponent();
     }
