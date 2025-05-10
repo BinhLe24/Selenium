@@ -1,20 +1,28 @@
 package tests.computer;
 
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import models.components.order.CheapComputerComponent;
+import test_data.DataObjectBuilder;
+import test_data.computer.ComputerData;
 import test_flows.BaseTest;
 import test_flows.computer.OrderComputerFlow;
 import url.Urls;
 
 public class BuyingCheapComputerTest extends BaseTest implements Urls {
 
-    @Test
-    public void testBuyingCheapComputer() {
+    @Test(dataProvider = "computerData")
+    public void testBuyingCheapComputer(ComputerData computerData) {
         driver.get(demoPageUrl.concat("build-your-cheap-own-computer"));
         OrderComputerFlow<CheapComputerComponent> orderComputerFlow = new OrderComputerFlow<>(driver,
-                CheapComputerComponent.class);
+                CheapComputerComponent.class, computerData);
         orderComputerFlow.buildCompSpecAndAddToCard();
+    }
 
+    @DataProvider
+    public ComputerData[] computerData() {
+        String fileLocation = "\\src\\test\\java\\test_data\\computer\\CheapComputerDataList.json";
+        return DataObjectBuilder.buildDataObjectFrom(fileLocation, ComputerData[].class);
     }
 }

@@ -35,5 +35,10 @@ public class DataProviderTest {
             return age;
         }
 
+        @Override
+        public String toString() {
+            return "User [name=" + name + ", age=" + age + "]";
+        }
+        
     }
 }
