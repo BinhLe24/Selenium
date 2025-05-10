@@ -1,0 +1,4 @@
+target/
+screenShots/
+.vscode/
+allure-results/

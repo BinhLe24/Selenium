@@ -1,55 +1,25 @@
 package tests.global.footer;
 
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
+import org.junit.Assert;
+import org.testng.annotations.Test;
 
-import driver.DriverFactory;
+import test_flows.BaseTest;
 import test_flows.global.FooterTestFlow;
 
-public class FooterTest1 {
+public class FooterTest1 extends BaseTest {
 
     @Test
     public void testFooterCategoryPage() {
-        WebDriver driver = DriverFactory.getChromDriver();
-        driver.get(url.Urls.demoPageUrl);
+        driver.get(url.Urls.categoryPageUrl);
         FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
-        try {
-            footerTestFlow.verifyProductCatFooterComponent();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            driver.quit();
-        }
-
+        footerTestFlow.verifyProductCatFooterComponent();
     }
 
-    // @Test
-    // public void testFooterRegistorPage() {
-
-    // }
-
-    // @Test
-    // public void testFooterLoginPage() {
-
-    // }
-
-    // @Test
-    // public void testFooterHomePage() {
-
-    // }
-
-    // @Test
-    // public void testMain() {
-    // WebDriver driver = DriverFactory.getChromDriver();
-    // driver.get(url.Urls.demoPageUrl);
-    // FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
-    // try {
-    // footerTestFlow.verifyProductCatFooterComponent();
-    // } catch (Exception e) {
-    // e.printStackTrace();
-    // }
-    // driver.quit();
-
-    // }
-
+    @Test
+    public void testFooterRegistorPage() {
+        driver.get(url.Urls.registerPageUrl);
+        Assert.fail();
+        FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+        footerTestFlow.verifyProductCatFooterComponent();
+    }
 }
