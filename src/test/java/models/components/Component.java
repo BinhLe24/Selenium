@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -84,5 +85,17 @@ public class Component {
                     + ComponentCssSelector.class.getSimpleName() + "or "
                     + ComponentXpathSelector.class.getSimpleName());
         }
+    }
+
+    public void scrollUpToElement(WebElement element) {
+        scrollToElement("false", element);
+    }
+
+    public void scrollDownToElement(WebElement element) {
+        scrollToElement("true", element);
+    }
+
+    private void scrollToElement(String position, WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(" + position + ");", element);
     }
 }
