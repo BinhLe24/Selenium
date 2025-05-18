@@ -17,8 +17,16 @@ public class BuyingStandardComputerTest extends BaseTest implements Urls {
         driver.get(demoPageUrl.concat("build-your-own-computer"));
         OrderComputerFlow<StandardComputerComponent> orderComputerFlow = new OrderComputerFlow<>(driver,
                 StandardComputerComponent.class, computerData);
+
         orderComputerFlow.buildCompSpecAndAddToCard();
         orderComputerFlow.verifyShoppingCartPage();
+        orderComputerFlow.agreeTOSAndCheckOut();
+        orderComputerFlow.inputBillingAddress();
+        orderComputerFlow.inputShippingAddress();
+        orderComputerFlow.selectShippingMethod();
+        orderComputerFlow.selectPaymentMethod();
+        orderComputerFlow.inputPaymentInfo();
+        orderComputerFlow.confirmOrder();
 
     }
 
