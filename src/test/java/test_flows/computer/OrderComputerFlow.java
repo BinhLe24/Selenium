@@ -215,8 +215,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
 
         if (this.paymentMethod.equals(PaymentMethod.PURCHASE_ORDER)) {
             paymentInformationComp.inputPurchaseNumber("123");
-        }
-        if (this.paymentMethod.equals(PaymentMethod.CREDIT_CARD)) {
+        } else if (this.paymentMethod.equals(PaymentMethod.CREDIT_CARD)) {
             paymentInformationComp.selectCreditCardType(creditCardType);
             String cardHolderFirstName = this.defaultCheckoutUser.getFirstname();
             String cardHolderLastName = this.defaultCheckoutUser.getLastname();
@@ -232,7 +231,7 @@ public class OrderComputerFlow<T extends ComputerEssentialComponent> {
             // paymentInformationComp.inputExpirationMonth(String.format("%02d",
             // calendar.get(Calendar.MONTH)
             // + 1));
-            paymentInformationComp.inputExpirationMonthByValue(String.valueOf(calendar.get(calendar.MONTH) + 1));
+            paymentInformationComp.inputExpirationMonthByValue(String.valueOf(calendar.get(Calendar.MONTH) + 1));
             paymentInformationComp.inputExpirationYear(String.valueOf(calendar.get(Calendar.YEAR) + 1));
             paymentInformationComp.inputCardCode("123");
             paymentInformationComp.clickOnContinueBtn();
