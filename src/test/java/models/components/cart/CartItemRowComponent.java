@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import models.components.Component;
 import models.components.ComponentCssSelector;
 
-@ComponentCssSelector("shopping-cart-page")
+@ComponentCssSelector(".cart-item-row")
 public class CartItemRowComponent extends Component {
 
     private static final By unitPriceSel = By.cssSelector(".product-unit-price");
