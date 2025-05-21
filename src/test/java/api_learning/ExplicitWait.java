@@ -26,7 +26,7 @@ public class ExplicitWait {
             By abcSel = By.cssSelector("#Teo");
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            // wait.until(ExpectedConditions.visibilityOfElementLocated(abcSel));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(abcSel));
             // wait.until(ExpectedConditions.visibilityOf(driver.findElement(abcSel)));
 
             // windowns/tabs -> waitUntil tabs > 1

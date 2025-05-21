@@ -11,6 +11,11 @@
             "seleniumProtocol": "WebDriver"
         },
         {
+            "browserName": "MicrosoftEdge",
+            "maxInstances": 4,
+            "seleniumProtocol": "WebDriver"
+        },
+        {
             "browserName": "safari",
             "maxInstances": 1,
             "seleniumProtocol": "WebDriver"
