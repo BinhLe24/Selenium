@@ -1,3 +1,10 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "maven.terminal.favorites": [
+        {
+            "alias": "Regression",
+            "command": "clean test --% -Dsurefire.suiteXmlFiles=src/test/resources/test-suites/Regression.xml"
+        }
+    ]
 }

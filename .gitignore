@@ -2,3 +2,4 @@ target/
 screenShots/
 .vscode/
 allure-results/
+test-output/

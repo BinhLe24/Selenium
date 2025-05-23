@@ -6,6 +6,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "test.Main",
+            "env": {"browser" : "chrome"},
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "TestGSON",
+            "request": "launch",
+            "mainClass": "test_data.TestGSON",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
+            "name": "TestCast",
+            "request": "launch",
+            "mainClass": "models.TestCast",
+            "projectName": "selenium"
+        },
+        {
+            "type": "java",
             "name": "FeatureProductTest",
             "request": "launch",
             "mainClass": "tests.global.footer.FeatureProductTest",
