@@ -18,7 +18,7 @@ public class BuyingCheapComputerTest extends BaseTest implements Urls {
    @Test(dataProvider = "computerData")
       public void testBuyingCheapComputer(ComputerData computerData) {
         WebDriver driver = getDriver();
-        driver.get(demoPageUrl.concat("build-your-cheap-own-computer"));
+        driver.get(demoPageUrl.concat(buyCheapComputerSlug));
         OrderComputerFlow<CheapComputerComponent> orderComputerFlow = new OrderComputerFlow<>(driver,
                 CheapComputerComponent.class, computerData);
 
