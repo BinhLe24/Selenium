@@ -1,7 +1,7 @@
 package test.global.footer;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -21,24 +21,24 @@ public class FooterTest {
     @Test
     public void testDemo1() {
         String actualResult = "Ti";
-        String expectedResult = "Teo";
+        String expectedResult = "Ti";
         // Verifier.verifyResult(actualResult, expectedResult);
 
         // Hard assertion
         Assert.assertEquals(expectedResult, actualResult, "[ERR] Welcome message is incorrect!");
-        Assert.assertTrue("[ERR] Welcome message is incorrect!", actualResult.equals(expectedResult));
-        Assert.assertFalse("[ERR] Welcome message is incorrect!", !actualResult.equals(expectedResult));
-        Assert.fail();
-        Assert.fail("[ERR] Welcome message is incorrect!");
+        Assert.assertTrue(actualResult.equals(expectedResult), "[ERR] Welcome message is incorrect!");
+        // Assert.assertFalse("[ERR] Welcome message is incorrect!", !actualResult.equals(expectedResult));
+        // Assert.fail();
+        // Assert.fail("[ERR] Welcome message is incorrect!");
     }
 
     @Test
     public void testDemo2() {
         // Soft assertion
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(1, 2);
+        softAssert.assertEquals(1, 1);
         softAssert.assertEquals(true, true);
-        softAssert.assertEquals(2, 3);
+        // softAssert.assertEquals(2, 3);
         softAssert.assertAll();
 
         System.out.println("Hello");

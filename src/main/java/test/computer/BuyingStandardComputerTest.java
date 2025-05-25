@@ -18,7 +18,7 @@ public class BuyingStandardComputerTest extends BaseTest implements Urls {
     @Test(dataProvider = "computerData")
     public void testBuyingStandardComputer(ComputerData computerData) {
         WebDriver driver = getDriver();
-        driver.get(demoPageUrl.concat("build-your-own-computer"));
+        driver.get(demoPageUrl.concat(buyStandardComputerSlug));
         OrderComputerFlow<StandardComputerComponent> orderComputerFlow = new OrderComputerFlow<>(driver,
                 StandardComputerComponent.class, computerData);
 
