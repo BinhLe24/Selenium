@@ -35,15 +35,9 @@ public class DynamicControl implements Urls {
                 javascriptExecutor.executeScript("arguments[0].setAttribute('style','border: 4px solid red')", checkboxFormElem);
             }
 
-            // DEBUG PURPOSE ONLY
-            Thread.sleep(2000);
-
             WebElement checkboxElem = checkboxFormElem.findElement(By.tagName("input"));
             if (!checkboxElem.isSelected())
                 checkboxElem.click();
-
-            // DEBUG PURPOSE ONLY
-            Thread.sleep(2000);
 
             // Input form interaction
             WebElement inputFormElem = driver.findElement(inputFormSel);

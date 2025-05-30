@@ -26,9 +26,6 @@ public class LinkTextInteraction {
             // Interaction
            powerByLinkTextElem.click();
 
-            // DEBUG PURPOSE ONLY
-            Thread.sleep(2000);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
