@@ -29,14 +29,6 @@ public static void main(String[] args) {
     WebDriver driver = new ChromeDriver(chromeOptions);
     driver.manage().window().maximize();
     driver.get("https://www.google.com/");
-
-    //DEBUG PURPOSE ONLY
-    try{
-        Thread.sleep(3000);
-    }catch (Exception e){
-        e.printStackTrace();
-    }
-
     driver.quit();
 }
 }

@@ -27,16 +27,12 @@ public class Dropdown implements Urls {
 
             // Select by visible text | Option 1
             select.selectOption1();
-            // DEBUG PURPOSE ONLY
-            Thread.sleep(1000);
 
             // Select by index | Option 2
             select.selectByIndex(2);
-            Thread.sleep(1000);
 
             // Select by value | Option 1
             select.selectByValue("1");
-            Thread.sleep(1000);
 
         } catch (Exception e) {
             e.printStackTrace();

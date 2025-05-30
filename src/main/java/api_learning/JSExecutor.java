@@ -26,9 +26,6 @@ public class JSExecutor implements Urls {
             // Scroll to top
             javascriptExecutor.executeScript("window.scrollTo(document.body.scrollHeight, 0);");
 
-            // Debug purpose only
-            Thread.sleep(2000);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

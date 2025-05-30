@@ -33,9 +33,6 @@ public class FormInteractionMultipleMatching {
                 Assert.fail("There is no element");
             }
 
-            // DEBUG PURPOSE ONLY
-            Thread.sleep(2000);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

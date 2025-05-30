@@ -24,8 +24,5 @@ public class ElementDisplaying {
 
         // Quit the browser session
         driver.quit();
-
-        // Imlicit wait, Explicit wait and Fluent wait
-
     }
 }

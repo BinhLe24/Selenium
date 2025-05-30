@@ -48,9 +48,6 @@ public class FormInteraction {
             passwordElem.sendKeys("SuperSecretPassword!");
             loginBtnElem.click();
 
-            // DEBUG PURPOSE ONLY
-            Thread.sleep(2000);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
